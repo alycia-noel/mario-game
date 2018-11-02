@@ -1,4 +1,3 @@
-
 <head>
 	<title>Turtle Attack!</title>
 	<meta charset="UTF-8">
