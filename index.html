@@ -53,18 +53,12 @@ Sprite.prototype.sit_still = function()
 {
 }
 
-
-
-
-
-
-
 function Model()
 {
 	this.sprites = [];
 	this.sprites.push(new Sprite(200, 100, "lettuce.png", Sprite.prototype.sit_still, Sprite.prototype.ignore_click));
-	this.turtle = new Sprite(50, 50, "turtle.png", Sprite.prototype.go_toward_destination, Sprite.prototype.set_destination);
-	this.sprites.push(this.turtle);
+	this.mario = new Sprite(50, 50, "mario1.png", Sprite.prototype.go_toward_destination, Sprite.prototype.set_destination);
+	this.sprites.push(this.mario);
 }
 
 Model.prototype.update = function()
@@ -85,7 +79,7 @@ Model.prototype.onclick = function(x, y)
 
 Model.prototype.move = function(dx, dy)
 {
-	this.turtle.move(dx, dy);
+	this.mario.move(dx, dy);
 }
 
 
@@ -97,8 +91,8 @@ function View(model)
 {
 	this.model = model;
 	this.canvas = document.getElementById("myCanvas");
-	this.turtle = new Image();
-	this.turtle.src = "turtle.png";
+	this.mario = new Image();
+	this.mario.src = "mario.png";
 }
 
 View.prototype.update = function()
