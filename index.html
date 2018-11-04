@@ -55,7 +55,6 @@ Sprite.prototype.sit_still = function()
 
 function Model()
 {
-	document.body.style.backgroundImage = "url('back.png')";
 	this.sprites = [];
 	this.sprites.push(new Sprite(200, 100, "lettuce.png", Sprite.prototype.sit_still, Sprite.prototype.ignore_click));
 	this.mario = new Sprite(50, 50, "mario1.png", Sprite.prototype.go_toward_destination, Sprite.prototype.set_destination);
@@ -94,12 +93,15 @@ function View(model)
 	this.canvas = document.getElementById("myCanvas");
 	this.mario = new Image();
 	this.mario.src = "mario.png";
+	this.background = new Image();
+	this.background.src = "back.jpg";
 }
 
 View.prototype.update = function()
 {
 	let ctx = this.canvas.getContext("2d");
 	ctx.clearRect(0, 0, 1000, 500);
+	ctx.drawImage(this.background, 0, 0);
 	for(let i = 0; i < this.model.sprites.length; i++)
 	{
 		let sprite = this.model.sprites[i];
