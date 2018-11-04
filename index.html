@@ -4,7 +4,7 @@
 </head>
 <body>
 <br>
-<canvas id="myCanvas" width="1000" height="750";></canvas>
+<canvas id="myCanvas" width="1000" height="750" document.body.style.backgroundImage = "url('back.jpg')";></canvas>
 
 <script type="text/javascript">
 
@@ -56,9 +56,7 @@ Sprite.prototype.sit_still = function()
 function Model()
 {
 	this.sprites = [];
-	//this.sprites.push(new Sprite(200, 100, "lettuce.png", Sprite.prototype.sit_still, Sprite.prototype.ignore_click));
-	this.back = new Sprite(1000, 750, "back.jpg", Sprite.prototype.sit_stil, Sprite.prototype.ignore_click);
-	this.sprites.push(this.back);
+	this.sprites.push(new Sprite(200, 100, "lettuce.png", Sprite.prototype.sit_still, Sprite.prototype.ignore_click));
 	this.mario = new Sprite(50, 50, "mario1.png", Sprite.prototype.go_toward_destination, Sprite.prototype.set_destination);
 	this.sprites.push(this.mario);
 }
